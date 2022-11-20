@@ -28,6 +28,9 @@ public class Libro {
 
     @ManyToOne
     @JoinColumn(name = "id_biblioteca")
-    private Biblioteca bibliote;
+    private Biblioteca biblioteca;
+
+
+
 
 }
