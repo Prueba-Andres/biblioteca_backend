@@ -12,25 +12,16 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "libros")
-public class Libro {
+@Table(name = "tematicas")
+public class Tematica {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_libro")
-    private long idLibro;
+    @Column(name = "id_tematica")
+    private long idTematica;
 
     @Column(name = "nombre")
     private String nombre;
-
-    @ManyToOne
-    @JoinColumn(name = "id_tematica")
-    private Tematica tematica;
-
-    @ManyToOne
-    @JoinColumn(name = "id_biblioteca")
-    private Biblioteca biblioteca;
-
 
 
 

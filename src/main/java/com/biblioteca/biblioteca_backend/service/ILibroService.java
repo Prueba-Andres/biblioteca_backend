@@ -16,6 +16,6 @@ public interface ILibroService {
     public boolean eliminarLibroPorId(long id);
 
     public void eliminarLibro(Libro libro);
-
+    public List<Libro> encontrarLibroPorTematica (String tematica);
 
 }

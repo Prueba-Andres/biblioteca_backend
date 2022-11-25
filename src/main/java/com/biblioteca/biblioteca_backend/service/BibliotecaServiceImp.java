@@ -12,7 +12,7 @@ import java.util.Optional;
 public class BibliotecaServiceImp implements IBibliotecaService {
 
     @Autowired
-    IBibliotecaRepository bibliotecaRepository;
+    private IBibliotecaRepository bibliotecaRepository;
 
     @Override
     public Biblioteca crearBiblioteca(Biblioteca biblioteca) {

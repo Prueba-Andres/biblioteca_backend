@@ -12,7 +12,7 @@ import java.util.Optional;
 public class LibroServiceImp implements ILibroService {
 
     @Autowired
-    ILibroRepository libroRepository;
+    private ILibroRepository libroRepository;
 
     @Override
     public Libro crearLibro(Libro libro) {
@@ -52,5 +52,11 @@ public class LibroServiceImp implements ILibroService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public List<Libro> encontrarLibroPorTematica(String tematica) {
+        List<Libro>librostematica = libroRepository.findByTematica(tematica);
+        return librostematica;
     }
 }
