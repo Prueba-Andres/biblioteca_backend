@@ -34,12 +34,12 @@ public class LibroRestController {
         return ResponseEntity.ok(libroServiceImp.encontrarLibros());
     }
 
-    @DeleteMapping(path = "{id}")
-    private String eliminarLibroPorId(@PathVariable("id") long id){
-        boolean eliminado=  libroServiceImp.eliminarLibroPorId(id);
+    @DeleteMapping(path = "delete/{id}")
+    private ResponseEntity<Boolean> eliminarLibroPorId(@PathVariable("id") long id){
+        libroServiceImp.eliminarLibroPorId(id);
+        return ResponseEntity.ok(!(libroServiceImp.encontrarLibroPorId(id)!=null));
 
-        if(eliminado) return "Cliente eliminado";
-        else return "Error eliminando cliente";
+
     }
 
     @GetMapping(path = "tematica/{tematica}")
